@@ -26,10 +26,8 @@ using var driver = new AndroidDriver(
     options,
     TimeSpan.FromSeconds(180));
 
-Console.WriteLine("Подключение успешно!");
-Console.WriteLine("Текущая Activity: " + driver.CurrentActivity);
-
-Console.WriteLine("Нажми Enter для завершения...");
+Console.WriteLine("Подключение успешно");
+Console.WriteLine($"Текущая Activity: {driver.CurrentActivity}");
 
 var menuButton = driver.FindElement(By.XPath("//android.widget.LinearLayout[@content-desc='Игры']"));
 
@@ -39,7 +37,6 @@ if(menuButton != null)
 }
 
 await Task.Delay(5000);
-
 
 var menuButton2 = driver.FindElement(By.XPath("//android.widget.LinearLayout[@content-desc='Приложения']"));
 
